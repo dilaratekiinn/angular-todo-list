@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/275507bc7a.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <title>Angular To Do List</title>
+</head>
+<body>
+  <div class="conteiner" ng-app="angularTodo">
+    <h1>Angular  To Do List</h1>
+    <div class="todo-list" ng-controller="angularTodoC">
+      <div class="todo-list-head">
+        <form ng-submit="submitNewItem();">
+          <input type="text" placeholder="Listeye eleman ekleyiniz" class="text-input" ng-model="newItem">
+          <div class="toto-list-submit" ng-click="submitNewItem();"><i class="fa fa-check" aria-hidden="true"></i></div>
+        <form>
+      </div>
+      <ul class="todo-list-items">
+        <li class="animated slideInUp" ng-repeat="item in items" ng-class="{'completed': item.status == 'completed'}">{{item.title}}
+          <i class="fa fa-trash-o todo-list-item__trash" aria-hidden="true" ng-click="deleteItem($index);"></i><i class="fa todo-list-item__complete" 
+          ng-class="{'fa-times': item.status == 'completed', 'fa-check-square-o': item.status != 'completed'}" aria-hidden="true" ng-click="completeItem($index);">
+        </i></li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+var angularTodo = angular.module('angularTodo', []);
+
+angularTodo.controller('angularTodoC', ['$scope', function($scope){
+  $scope.items = [
+    {title: 'Sinema', status: ''}, 
+    {title: 'Spor', status: ''},
+    {title: 'Kitap', status: ''}
+  ];
+  
+  $scope.submitNewItem = function() {
+    if( $scope.newItem ) {
+      $scope.items.push({title: $scope.newItem});
+      $scope.newItem = '';
+    }
+  };
+  
+  $scope.completeItem = function(index) {
+    if( $scope.items[index].status == 'completed' ) {
+      $scope.items[index].status = '';
+    } else {
+      $scope.items[index].status = 'completed';
+    }
+  };
+  
+  $scope.deleteItem = function(index) {
+    $scope.items.splice(index, 1);
+  };
+}]);
+  </script>
+</body>
+</html>
+  

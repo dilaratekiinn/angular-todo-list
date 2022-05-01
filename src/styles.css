@@ -1,0 +1,99 @@
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background: linear-gradient(135deg, #240925,#6a4f6a,#877587);
+ }
+ .conteiner{
+     max-width: 500px;
+     border-radius: 8px ;
+     width: 100%;
+     max-height: 100%;
+     background-color: #0e0e15;
+     padding: 40px;
+     overflow: auto;
+ 
+ 
+ }
+ .h1 {
+    margin: 0 0 30px ;
+     color: #fff;
+     font-weight: 400;
+     font-size: 32px;
+     text-transform: uppercase;
+    
+ } 
+
+ input[type=text ]{
+     width: 90%;
+     font-style: italic;
+    border: 1px solid;
+    outline: none;
+    line-height: 40px;
+    margin: 0 0 10px;
+    border: 0;
+    background: #f1f1f1;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(167, 55, 137, 0.5);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(140, 108, 143, 0.5);
+    box-shadow: 0px 2px 2px 0px rgba(221, 154, 191, 0.5);
+      outline: none;
+      margin: left;
+      border-radius: 3px;
+ }
+.toto-list-submit {
+    position: relative;
+}
+
+ .toto-list-submit i { 
+     position: absolute; 
+     top: -35px;
+  right: -4px;
+  width: 30px;
+  height: 40px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+
+ }
+
+ .todo-list-items li {
+    position: relative;
+    background: #f1f1f1;
+    padding: 0 15px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    width: 370px;
+    color: #333;
+    right: 40px;
+    height:45px;
+    list-style: none;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(167, 55, 137, 0.5);
+       -moz-box-shadow: 0px 2px 2px 0px rgba(140, 108, 143, 0.5);
+       box-shadow: 0px 2px 2px 0px rgba(221, 154, 191, 0.5);
+   
+ }
+  
+
+ .todo-list-items i {
+     padding: 4px;
+     float: right;
+   margin-top: 6px;
+     cursor: pointer;
+ }
